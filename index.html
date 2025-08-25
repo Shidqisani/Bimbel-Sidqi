@@ -3,159 +3,266 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Bimbingan Belajar Sidqi</title>
+
+  <!-- SEO meta -->
+  <meta name="description" content="Bimbingan Belajar Sidqi – bimbingan belajar untuk TK–SMP. Tempat nyaman, tutor berpengalaman, harga terjangkau." />
+  <meta name="keywords" content="bimbingan belajar, les privat, bimbel TK, bimbel SMP, Sidqi" />
+  <meta name="author" content="Bimbingan Belajar Sidqi" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Bimbingan Belajar Sidqi" />
+  <meta property="og:description" content="Bimbingan Belajar Sidqi – solusi tepat meningkatkan prestasi belajar TK–SMP. Tempat nyaman, tutor berpengalaman, harga terjangkau." />
+  <meta property="og:image" content="https://shidqisani.github.io/Bimbel-Sidqi/foto1.jpg" />
+  <meta property="og:url" content="https://shidqisani.github.io/Bimbel-Sidqi/" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" href="https://shidqisani.github.io/Bimbel-Sidqi/logo.png" type="image/png" />
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg:#0f172a;
+      --card:#111827;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --accent:#22c55e;
+      --accent-2:#38bdf8;
     }
-    header {
-      background: #2c3e50;
-      color: white;
-      padding: 1rem;
-      text-align: center;
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Inter,Arial,sans-serif;
+      background:linear-gradient(180deg,#0b1220,#0f172a);
+      color:var(--text);
+      line-height:1.6;
     }
-    section {
-      padding: 2rem;
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block;height:auto}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{
+      position:sticky;
+      top:0;
+      background:rgba(10,15,25,.7);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid #1f2937;
+      z-index:10
     }
-    .grid {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand .logo{
+      width:40px;height:40px;
+      border-radius:12px;
+      background:radial-gradient(circle at 30% 30%, var(--accent), var(--accent-2));
+      box-shadow:0 8px 30px rgba(34,197,94,.35)
     }
-    .card {
-      border: 1px solid #ddd;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,.1);
-      background: #fff;
+    .brand h1{font-size:18px;margin:0}
+    .cta{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .btn{
+      padding:10px 14px;
+      border-radius:12px;
+      border:1px solid #1f2937;
+      background:#0b1220;
+      cursor:pointer;
+      text-align:center;
+      color:var(--text);
     }
-    .btn.primary {
-      background: #3498db;
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
+    .btn.primary{
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#06121a;
+      border:none;
+      font-weight:600
     }
-    .btn.primary:hover {
-      transform: scale(1.05);
-      transition: all 0.2s ease;
-      background: #2980b9;
+    select.btn{
+      appearance:none;
     }
-    .muted {
-      color: #666;
-      font-size: 0.9rem;
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:36px 0}
+    .hero h2{font-size:34px;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 20px}
+    .card{
+      background:linear-gradient(180deg,#0b1220,#0c1526);
+      border:1px solid #1f2937;
+      border-radius:20px;
+      padding:18px;
+      box-shadow:0 10px 30px rgba(2,6,23,.35)
     }
-    /* Floating WA */
-    .wa-float {
-      position: fixed;
-      width: 50px;
-      height: 50px;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 28px;
-      box-shadow: 0 4px 8px rgba(0,0,0,.3);
-      line-height: 50px;
-      z-index: 100;
-      text-decoration: none;
+    .tag{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(56,189,248,.15);
+      border:1px solid rgba(56,189,248,.25);
+      color:#c6f0ff;
+      font-size:12px;
+      margin-bottom:10px
+    }
+    .hero .img-wrap{border-radius:20px;overflow:hidden;border:1px solid #1f2937}
+
+    /* Info grid */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+    .info-item h3{margin:0 0 6px;font-size:16px}
+    .muted{color:var(--muted);font-size:14px}
+
+    /* Harga */
+    .harga{margin-top:32px}
+    .harga h3{margin:0 0 12px}
+    .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .price-card{border-radius:20px;border:1px solid #1f2937;padding:18px;background:linear-gradient(180deg,#0b1220,#0b1424)}
+    .price{font-size:28px;font-weight:700;margin:8px 0}
+    ul{margin:10px 0 0 18px}
+
+    /* Lokasi */
+    .lokasi{margin-top:32px}
+    .map{position:relative;padding-top:56%;border-radius:16px;overflow:hidden;border:1px solid #1f2937}
+    .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+    footer{margin-top:36px;padding:24px 0;border-top:1px solid #1f2937;color:var(--muted);font-size:14px}
+
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;text-align:center}
+      .grid,.price-grid{grid-template-columns:1fr}
+      .cta{justify-content:center}
+    }
+    @media (max-width:600px){
+      body{font-size:14px}
+      .container{padding:12px}
+      .hero h2{font-size:24px}
+      .price{font-size:22px}
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Bimbingan Belajar Sidqi</h1>
-    <p>Membantu siswa meraih prestasi terbaik 📚</p>
-    <!-- Dropdown WhatsApp -->
-    <select class="btn primary" onchange="openWhatsApp(this.value)">
-      <option value="">Chat WhatsApp 📲</option>
-      <option value="6285736901359">Admin 1 (0857-3690-1359)</option>
-      <option value="6285659979394">Admin 2 (0856-5997-9394)</option>
-    </select>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <h1>Bimbel Sidqi</h1>
+      </div>
+      <div class="cta">
+        <a class="btn" href="tel:+6285736901359">☎️ 0857-3690-1359</a>
+
+        <!-- Dropdown WhatsApp -->
+        <select class="btn primary" onchange="openWhatsApp(this.value)">
+          <option value="">Chat WhatsApp 📲</option>
+          <option value="6285736901359">Admin 1 (0857-3690-1359)</option>
+          <option value="6285659979394">Admin 2 (0856-5997-9394)</option>
+        </select>
+      </div>
+    </div>
   </header>
 
-  <!-- Harga -->
-  <section class="harga">
-    <h2>Paket & Harga</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Paket SD</h3>
-        <p>Rp 250.000 / bulan</p>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="tag">TK • SD • SMP</span>
+        <h2>Tingkatkan nilai dengan tutor berpengalaman, tempat nyaman, dan jadwal fleksibel.</h2>
+        <p>Kelas privat & kelompok, modul lengkap, try out berkala.</p>
+        <div class="cta">
+          <a class="btn primary" href="#harga">Lihat Harga Bulanan</a>
+          <a class="btn" href="#lokasi">Cek Lokasi</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Paket SMP</h3>
-        <p>Rp 300.000 / bulan</p>
+      <div class="img-wrap">
+        <img src="logo.jpg" alt="Ruang bimbingan belajar yang nyaman" />
       </div>
-      <div class="card">
-        <h3>Paket SMA</h3>
-        <p>Rp 350.000 / bulan</p>
+    </section>
+
+    <section class="grid">
+      <article class="card info-item">
+        <h3>Kontak</h3>
+        <p class="muted">Telepon: <a href="tel:+6285736901359">0857-3690-1359</a><br>WhatsApp: <a href="https://wa.me/6285736901359">wa.me/6285736901359</a></p>
+        <p class="muted">Telepon: <a href="tel:+6285659979394">0856-5997-9394</a><br>WhatsApp: <a href="https://wa.me/6285659979394">wa.me/6285659979394</a></p>
+        <p class="muted">Email: <a href="mailto:halo@bimbelcemerlang.id">halo@bimbelcemerlang.id</a></p>
+      </article>
+      <article class="card info-item">
+        <h3>Sosial Media</h3>
+        <p class="muted">
+          Instagram: <a href="https://instagram.com/bimbelsidqi" target="_blank" rel="noopener">@bimbelsidqi</a><br>
+          Facebook: <a href="https://facebook.com/bimbelcemerlang" target="_blank" rel="noopener">bimbelcemerlang</a>
+        </p>
+      </article>
+      <article class="card info-item">
+        <h3>Jam Operasional</h3>
+        <p class="muted">Senin–Jumat 12.00–20.00<br>Sabtu–Minggu (Tanggal merah) libur</p>
+      </article>
+    </section>
+
+    <section id="harga" class="harga">
+      <h3>Harga Bulanan</h3>
+      <div class="price-grid">
+        <div class="price-card">
+          <h4>Paket Reguler</h4>
+          <div class="price">Rp75.000/bulan</div>
+          <ul>
+            <li>5x pertemuan (60 menit)</li>
+            <li>Grup besar (jumlah siswa menyesuaikan)</li>
+            <li>Modul & latihan mingguan</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <h4>Paket Privat</h4>
+          <div class="price">Rp120.000/bulan</div>
+          <ul>
+            <li>5x pertemuan (60 menit)</li>
+            <li>Grup kecil (maksimal 6 siswa)</li>
+            <li>Konsultasi PR harian</li>
+          </ul>
+        </div>
+        <div class="price-card">
+          <h4>Privat 1-on-1</h4>
+          <div class="price">Rp150.000/jam</div>
+          <ul>
+            <li>Jadwal fleksibel</li>
+            <li>Silabus custom</li>
+            <li>Home</li>
+          </ul>
+        </div>
       </div>
+    </section>
+
+    <section id="lokasi" class="lokasi">
+      <h3>Lokasi Kami</h3>
+      <div class="map card">
+        <iframe loading="lazy" allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.096104823234!2d112.11089537411664!3d-7.996722292029015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e78f1a3f71ad005%3A0xbcdd7a4bd15e9d0e!2sBimbingan%20Belajar%20%22Sidqi%22!5e1!3m2!1sid!2sid!4v1756098682544!5m2!1sid!2sid"></iframe>
+      </div>
+
+      <section style="text-align:center; margin-top:24px">
+        <!-- Dropdown WhatsApp Daftar -->
+        <select class="btn primary" onchange="openWhatsApp(this.value)">
+          <option value="">📲 Daftar Sekarang via WhatsApp</option>
+          <option value="6285736901359">Admin 1 (0857-3690-1359)</option>
+          <option value="6285659979394">Admin 2 (0856-5997-9394)</option>
+        </select>
+      </section>
+      <section class="card">
+      <h2>Testimoni Siswa & Orang Tua</h2>
+      <div class="grid">
+        <div class="card">
+          <p>"Anak saya jadi lebih semangat belajar setelah ikut bimbel ini. Nilainya naik drastis."</p>
+          <strong>- Ibu Rani (Orang Tua SMP)</strong>
+        </div>
+        <div class="card">
+          <p>"Tutornya sabar dan penjelasannya mudah dipahami. Saya jadi lebih percaya diri."</p>
+          <strong>- Adi (Siswa SD)</strong>
+        </div>
+      </div>
+    </section>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="y"></span> Bimbingan Belajar Sidqi — Semua hak cipta dilindungi.
     </div>
-  </section>
-
-  <!-- Testimoni -->
-  <section>
-    <h2>Testimoni Siswa & Orang Tua</h2>
-    <div class="grid">
-      <div class="card">
-        <p>"Anak saya jadi lebih semangat belajar setelah ikut bimbel ini. Nilainya naik drastis."</p>
-        <strong>- Ibu Rani (Orang Tua SMP)</strong>
-      </div>
-      <div class="card">
-        <p>"Tutornya sabar dan penjelasannya mudah dipahami. Saya jadi lebih percaya diri."</p>
-        <strong>- Adi (Siswa SD)</strong>
-      </div>
-    </div>
-  </section>
-
-  <!-- Profil Tutor -->
-  <section>
-    <h2>Tutor Kami</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="tutor1.jpg" alt="Tutor Matematika" style="width:100%;border-radius:10px;">
-        <h4>Bapak Andi</h4>
-        <p class="muted">S1 Pendidikan Matematika, berpengalaman 5 tahun mengajar.</p>
-      </div>
-      <div class="card">
-        <img src="tutor2.jpg" alt="Tutor Bahasa Inggris" style="width:100%;border-radius:10px;">
-        <h4>Ibu Sinta</h4>
-        <p class="muted">S1 Sastra Inggris, pernah menjadi guru di sekolah internasional.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section>
-    <h2>FAQ (Pertanyaan Umum)</h2>
-    <div class="card">
-      <p><strong>Q: Apakah ada kelas online?</strong><br>A: Saat ini fokus tatap muka, tetapi bisa privat online sesuai permintaan.</p>
-      <p><strong>Q: Bagaimana cara pembayaran?</strong><br>A: Bisa transfer atau bayar langsung ke kantor bimbel.</p>
-    </div>
-  </section>
-
-  <!-- Tombol daftar -->
-  <section style="text-align:center;">
-    <h2>Daftar Sekarang</h2>
-    <select class="btn primary" onchange="openWhatsApp(this.value)">
-      <option value="">Pilih Admin untuk Daftar 📲</option>
-      <option value="6285736901359">Admin 1 (0857-3690-1359)</option>
-      <option value="6285659979394">Admin 2 (0856-5997-9394)</option>
-    </select>
-  </section>
-
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/6285736901359?text=Halo%20saya%20ingin%20info%20bimbel" 
-     class="wa-float" target="_blank">💬</a>
+  </footer>
 
   <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
     function openWhatsApp(number) {
       if (number) {
         window.open("https://wa.me/" + number + "?text=Halo%20saya%20ingin%20tanya%20info%20bimbel", "_blank");
